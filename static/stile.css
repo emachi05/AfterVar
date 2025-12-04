@@ -78,7 +78,6 @@ p{
 
 #profile{
     cursor:pointer;
-    background-color: ;
     color: aliceblue;
     width: 100px;
     height: 95px;
@@ -87,3 +86,29 @@ p{
     justify-content: right;
 }
 
+#footer{
+    background-color: black;
+    width: 100%;
+    height: 150px;
+    margin: 0;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+#logo_footer{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    cursor: pointer;
+}
+
+#logo_image_footer{
+    height: 150px;
+    width: auto;
+    z-index: 2;
+}

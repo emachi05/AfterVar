@@ -7,11 +7,52 @@
 
 </head>
 <body>
-   {% include 'header.html' %}
-   <main>
-        <h1>AfterVar!</h1>
-        <p>Benvenuti nel portale degli arbitri.</p>
-    </main>
-    {% include 'footer.html' %}
+    <header>
+    <div id = "back_header" class = "header">
+        
+        <div id="menu_3_linee"  onclick="toggleMenu()">
+            <div class="linea"></div>
+            <div class="linea"></div>
+            <div class="linea"></div>
+        </div>
+
+
+        <div id="logo_container">
+
+            <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="logo_img" id="logo_img">
+            
+            <div class="scritta_container">
+                <img src="{{ url_for('static', filename='images/Scritta_Logo.png') }}" alt="scritta_logo" id="scritta_logo">
+            </div>
+            
+        </div>
+
+        <div id="profile">
+            <img src="{{ url_for('static', filename='images/immagine_profilo.jpg') }}" alt="logo_img" id="logo_img">
+        </div>
+        
+    </div>
+    </header>
+   <footer id="footer">
+        <div id = "back_footer" class = "footer">
+            
+            <div id="logo_footer">
+                <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="logo_image" id="logo_image_footer">
+            </div>
+
+            <div>
+
+            </div>
+
+            <div>
+
+            </div>
+
+            <div id="about_us">
+              <p> Chi siamo? </p>
+            </div>
+        
+        </div>
+    </footer>
 </body>
 </html>

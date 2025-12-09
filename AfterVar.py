@@ -21,3 +21,4 @@ def view_info_arbitri():
 
 def view_news_calcio():
     return render_template('News_Calcio.html')
+

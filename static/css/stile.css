@@ -436,3 +436,8 @@ transform: translateY(-10px);
     color: #555;
     margin: 0;
 }
+
+#menu_container ul{
+    margin: 0;
+    padding: 0;
+}

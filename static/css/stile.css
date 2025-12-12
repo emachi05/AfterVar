@@ -438,6 +438,20 @@ transform: translateY(-10px);
 }
 
 #menu_container ul{
+    list-style-type: none; /*to remove dot*/
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    background-color: #555;
+    justify-content: center;
+    display: flex;
 }
+
+#menu_container ul li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+

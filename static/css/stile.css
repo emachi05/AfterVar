@@ -335,17 +335,16 @@ main {
 .title_var h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    color: #333;
+    color: black;
 }
 
 .title_var h3 {
-    font-size: 1.2rem;
-    font-weight: normal;
-    color: #666;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
+    font-size: 1rem;;
+    color:#777;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
 }
 
 .content_var {
@@ -360,7 +359,6 @@ main {
     line-height: 1.8;
     color: #4b5563;
     margin-bottom: 30px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .left_var, .right_var {

@@ -2,29 +2,45 @@ from flask import Flask,render_template
 
 app = Flask(__name__)
 
+
+#Main Menu ON TOP
+
 @app.route('/')
 
 def HomePage():
     return render_template('home.html')
 
+@app.route('/episodi')
+
+def Episodi():
+    return render_template('episodi.html')
+
+@app.route('/classifica')
+
+def Classifica():
+    return render_template('classifica.html')
+
+@app.route('/arbitri')
+
+def Arbitri():
+    return render_template('arbitri.html')
+
 @app.route('/regolamento')
 
-def view_regolamento():
+def Regolamento():
     return render_template('regolamento.html')
 
-@app.route('/infoarbitri')
+@app.route('/notizie')
 
-def view_info_arbitri():
-    return render_template('Info_Arbitri.html')
+def Notizie():
+    return render_template('notizie.html')
 
-@app.route('/newscalcio')
 
-def view_news_calcio():
-    return render_template('News_Calcio.html')
 
-@app.route('/chisiamo')
+#MENU IN FOOTER
+@app.route('/aboutus')
 
-def Chi_Siamo():
-    return render_template('Chi_Siamo.html')
+def About_Us():
+    return render_template('aboutus.html')
 
 

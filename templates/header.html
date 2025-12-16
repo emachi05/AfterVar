@@ -1,4 +1,3 @@
-
 <header>
     <div id = "back_header" class = "header">
         
@@ -25,15 +24,15 @@
         
     </div>
     
+    <!--Menu section-->
     <div id = "menu_container">
         <ul>
-            <li><a href = "home.html">HomePage</a></li>
-            <li><a href = "home.html">Episodi</a></li>
-            <li><a href = "home.html">Classifica</a></li>
-            <li><a href = "home.html">Profilo</a></li>
-            <li><a href = "home.html">Arbitri</a></li>
-            <li><a href = "home.html">Lascia una recensione</a></li>
+            <li><a href="{{ url_for('HomePage') }}">HomePage</a></li>
+            <li><a href="{{ url_for('Episodi') }}">Episodi</a></li>
+            <li><a href="{{ url_for('Classifica') }}">Classifica</a></li>
+            <li><a href="{{ url_for('Arbitri') }}">Arbitri</a></li>
+            <li><a href="{{ url_for('Regolamento') }}">Regolamento</a></li>
+            <li><a href="{{ url_for('Notizie') }}">Notizie</a></li>
         </ul>
     </div>
-
 </header>

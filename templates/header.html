@@ -20,25 +20,29 @@
 
         <div id="profile">
             {% if current_user.is_authenticated %}
-            <div id="logo_profile" onclick="ProfileMenu()">   
-                <img src="{{ url_for('static', filename='images/immagine_profilo.jpg') }}" alt="logo_img" id="logo_img">
-            </div>
+                <div id="logo_profile" onclick="ProfileMenu()">   
+                    <img src="{{ url_for('static', filename='images/immagine_profilo.jpg') }}" alt="logo_img" id="logo_img">
+                </div>
 
-            <div id="dropdown_profile">
-
-            </div>
-
-
-
-            
-            
+                <div id="profile_dropdown">
+                    <div id="label_profile">
+                        <p>Ciao</p>
+                        <p id="username">{{current_user.username}}</p>
+                    </div>
+                    <ul id="link_dropdown">
+                        <li><a href=''></a>Profilo</li>
+                        <li><a href=''></a>Punteggio</li>
+                        <li><a href=''></a>Storico</li>
+                        <li><a href="{{url_for ('Logout')}}"></a></li>
+                    </ul>
+                </div>
             {% else %}
-            
-            
+                <div class="btn_auth">
+                    <a href="{{url_for ('Login')}}" id="btn_login">Login</a>
+                    <a href="{{url_for ('Registrazione')}}" id="btn_register">Registrazione</a>
+                </div>
             {% endif %}
-
         </div>
-        
     </div>
     
     <!--Menu section-->

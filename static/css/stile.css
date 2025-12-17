@@ -37,7 +37,6 @@ p{
 
 #logo_container{
     display: flex;
-    height: 100%;
     align-items: center;
     cursor: pointer;
 }
@@ -73,10 +72,8 @@ p{
 }
 
 #profile{
-    cursor:pointer;
+    cursor: pointer;
     color: aliceblue;
-    width: 100px;
-    height: 95px;
     display: flex;
     flex-direction: column;
     justify-content: right;
@@ -644,4 +641,18 @@ transform: translateY(-10px);
 
 #sec_4_right{
     flex:2;
+}
+
+#btn_auth{
+    display: flex;
+    align-items: center;
+}
+
+#btn_login, #btn_register{
+    color: honeydew;
+    text-decoration: none;
+    background-color: cadetblue;
+    border: 5px solid cadetblue;
+    font-size: 1.2rem;
+    font-weight: bold;
 }

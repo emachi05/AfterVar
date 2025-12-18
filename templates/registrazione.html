@@ -5,10 +5,61 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stile.css') }}">
 </head>
-<body>
-    
+<body class="body_register">
+
+<main class="register_container"> 
+
+    <!--use this div for contain all-->
+    <div class="login">
+
+        <div class="register_left">    
+            <h1 id="h1_register">Benvenuto</h1>
+                <p id="p_register">Inizia Ora!</p>
+        
+                <form id='form' action="{{ url_for ('Login') }}" method="post">
+                    <div class="register_field">
+                            <label for="username">Nome: </label>
+                            <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="register_field">
+                            <label for="username">Cognome: </label>
+                            <input type="text" id="cognome" name="cognome" required>
+                    </div>
+
+
+                    <div class="register_field">
+                            <label for="username">Email: </label>
+                            <input type="text" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="register_field">
+                            <label for="username">Username: </label>
+                            <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="register_field">
+                        <label for="password">Password: </label>
+                        <input type="password" id="pwd" name="pwd" required>
+                    </div>
+                    <button id='btn_sumbit' type="submit">Entriamo in campo!</button>
+                </form>
+        </div>
+
+        <div class="register_right">
+            <img src="static/images/logo_login.png" id="logo_login" alt="logo_login">
+        </div>
+
+    </div>
+    <!--div outside-->
+    <div class="already_login">
+            <h3>Hai già un account?</h3>
+            <a href="{{url_for ('Login')}}"> Vai al login!</a>    
+    </div>
+
+</main>
+
 </body>
 </html>

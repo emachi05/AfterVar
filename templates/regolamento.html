@@ -9,9 +9,92 @@
 <body>
     {% include 'header.html' %}
 
-    <main>
-        <h1>Come funziona ?</h1>
+    <section class="sec_regolamento">
+            <div class="regolamento">
+                
+                <div class="regolamento_title">
+                    <h1>REGOLAMENTO E SISTEMA DI VALUTAZIONE</h1>
+                    <h3>Come funziona l'ecosistema AfterVar</h3>
+                </div>
+
+                <div class="regolamento_content">
+                    
+                    <div class="reg_n">
+                        <h4>1. Il Ruolo del Tifoso e i Token Reputazione</h4>
+                        <p>
+                            Su AfterVar, il tifoso non è più uno spettatore passivo. Dopo aver analizzato i principali episodi 
+                            VAR della partita tramite video o frame dedicati, ogni utente può esprimere il proprio giudizio. 
+                            Per garantire affidabilità, utilizziamo un sistema di reputazione dinamico.
+                        </p>
+                        <p>
+                            Ad ogni utente viene assegnato un Token identificativo in base al punteggio accumulato:
+                        </p>
+                        <ul class="token">
+                            <li class="token_green">Token Verde: Reputazione > 80 (Utente affidabile)</li>
+                            <li class="token_yellow">Token Giallo: &#60; = 50 Reputazione &#60; = 80  (Utente discreto)</li>
+                            <li class="token_red">Token Rosso: Reputazione &#60; 50 (Utente poco affidabile)</li>
+                        </ul>
+                    </div>
+
+                    <div class="reg_n">
+                        <h4>2. L'Algoritmo del Giudizio Finale</h4>
+                        <p>
+                            Per determinare la correttezza di una decisione arbitrale, AfterVar utilizza un 
+                            sistema ibrido che bilancia il parere dell'utente ovvero del tifoso, con il giudizio arbitrale.
+                            Il voto definitivo è calcolato così:
+                            <ul class="suspension_table">
+                                <li> Il voto del tifoso incide al 30% (si tiene conto anche della sua reputazione) </li>
+                                <li> Il voto della giuria arbitrale incide al 70% </li>
+                            </ul>
+                        </p>
+                    </div>
+
+                    <div class="reg_n">
+                        <h4>3. Sistema Disciplinare Virtuale per gli Arbitri</h4>
+                        <p>
+                            In base al punteggio finale dell'algoritmo, l'arbitro dell'incontro riceve 
+                            una valutazione che può trasformarsi in provvedimenti virtuali:
+                        </p>
+                        <ul class="token">
+                            <li class="token_yellow">Cartellino Giallo: Punteggio tra 26 e 50 (Errore lieve o contestato)</li>
+                            <li class="token_red">Cartellino Rosso: Punteggio &#60; 25 (Errore grave).</li>
+                        </ul>
+                        </div>
+                        <div class="reg_n">
+                        <h5>4. Leggenda Sospensioni</h5>
+                        <p> In base ai cartellini, che un arbitro riceve, ci sono varie sospensioni, del tipo:</p>
+                        <ul class="suspension_table">
+                            <li>2 Gialli accumulati ➔ 1 Rosso (Sospensione 1 turno)</li>
+                            <li>1 Rosso diretto ➔ Sospensione 1 turno</li>
+                            <li>2 Rossi consecutivi ➔ Sospensione 3 turni</li>
+                            <li>3 Rossi consecutivi ➔ Sospensione 5 turni </li>
+                        </ul>
+                     </div>
+                     <div class="reg_n">
+                        <h4>5. Calcolo della Reputazione per l'Utente</h4>
+                        <p> La reputazione non è fissa. Ogni volta che il tuo voto coincide con il 
+                            giudizio finale dell'algoritmo che incluce anche il giudizio degli arbitri, l'utente guadagna punti. 
+                            Se il tuo voto è opposto, ne perdi. </p>
+                        <ul class="suspension_table">
+                            <li>Se il Voto è Conforme: +2 Punti per la sua Reputazione</li>
+                            <li>Se il Voto è Difforme: -1 Punto per la sua Reputazione</li>
+                        </ul>
+                    </div>
+
+                    <div class="reg_n">
+                        <h4>6. Stagioni e Reset</h4>
+                        <p> Il calendario a cui fa riferimento AfterVar segue il calendario reale della Serie A(38 Giornate). 
+                            Al termine di ogni stagione, avviene il "Grande Reset":</p>
+                        <ul class="suspension_table">
+                            <li>I Token Reputazione vengono ricalibrati verso la media (50).</li>
+                            <li>I cartellini degli arbitri vengono azzerati.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+        
 
     {% include 'footer.html' %}
 

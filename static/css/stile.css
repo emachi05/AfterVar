@@ -201,30 +201,35 @@ p{
 .body_register{
     margin: 0;
     padding: 0;
-    min-height: 100px;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
 }
 
 .register{
     margin-top: 15%;
     background-color: bisque;
-    width: 100%;
-    max-width: 900px;
+    width: 90%;
+    height: auto;
+    gap: 40px;
+    max-width: 1400px;
     display: flex;
     flex-direction: row;
     overflow: hidden;
     border: 1px solid black;
     border-radius: 20%;
+    margin-top: 15px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 .register_left{
-    flex: 1;
+    flex: 2;
     display: flex;
-    padding: 30px;
+    padding: 20 40px;
+    margin-left: 20px;
     flex-direction: column;
     justify-content: center;
 }
@@ -250,12 +255,16 @@ p{
     flex: 1;
     display: flex;
     padding: 30px;
+    width: 80%;
+    max-width: 1400px;
     flex-direction: column;
     justify-content: center;
+    background-color: #000;
+    align-items: center;
 }
 
 .register_field{
-    margin-bottom: 10%;
+    margin-bottom: 15px;
     text-align: left;
 }
 
@@ -269,12 +278,12 @@ p{
 
 .register_field input{
     width: 100%;
-    padding: 5%;
-    border-radius: 10%;
+    padding: 10px 15px;
+    border-radius: 8%;
     color: black;
     text-align: left;
     border: 1px solid black;
-    font-size: 1rem;
+    font-size: 1.0rem;
     box-sizing: border-box;
 }
 
@@ -282,10 +291,12 @@ p{
     width: 100%;
     min-width: 200px;
     padding:5%;
+    margin-left: 20px;
     background-color: black;
     color: white;
     border-radius: 50%;
     font-weight: bold;
+    margin-bottom: 30px;
     font-size: 1rem;
     text-transform: uppercase;
     cursor: pointer;
@@ -294,6 +305,15 @@ p{
 
 #btn_sumbit_r:hover{
     color: skyblue;
+}
+
+#logo_register{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover; 
+    border-radius: 10%;
+    border: 1px solid black;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 

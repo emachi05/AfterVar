@@ -603,16 +603,6 @@ main {
     color: #444;
 }
 
-.left_var strong {
-    color: #000;
-    font-weight: bold;
-}
-
-.content_var strong {
-    color: #000;
-    font-weight: bold;
-}
-
 @keyframes arrivesFromLeft {
     from {
         opacity: 0;
@@ -648,17 +638,6 @@ main {
 }
 
 /*Highlight specific words */
-.class_var strong {
-    transition: color 0.3s ease, background-color 0.3s ease;
-    cursor: default;
-    padding: 0 4px;
-    border-radius: 4px;
-}
-
-.class_var strong:hover  {
-    color: white;
-    background-color: #333;
-}
 
 #first_s_right h1 {
     font-size: 3rem;
@@ -841,7 +820,7 @@ transform: translateY(-10px);
 #sec_4_left h3{
     font-size: 0.9rem;
     color: #888;
-    font-weight: 400;
+    font-weight: 400px;
     letter-spacing: 3px;
     margin-bottom: 30px;
     margin-top: 10px;
@@ -894,3 +873,114 @@ transform: translateY(-10px);
     font-size: 1.2rem;
     font-weight: bold;
 }
+
+.sec_regolamento{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.regolamento_title h1{
+    text-align: left;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #000;
+    margin-top: 50px;
+    
+}
+
+.regolamento_title h3{
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+.reg_n  {
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    text-align: left;
+}
+
+.reg_n h4{
+    color: dodgerblue;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.reg_n h5{
+     color: dodgerblue;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.reg_n p{
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+    max-width: 900px;
+}
+
+.token{
+    padding-left: 20px;
+    margin-bottom: 20px;
+    list-style-type: disc;
+    padding: 20px 20px 20px 40px;
+    margin-bottom: 20px;
+    list-style-type: none;
+    background-color: #f9f9f9;
+    border-left: 4px solid dodgerblue;
+    border-radius: 0 10px 10px 0;
+    max-width: 860px;
+}
+
+.user_rep{
+    padding-left: 20px;
+    margin-bottom: 20px;
+    list-style-type: disc;
+}
+
+.suspension_table{
+    padding: 20px 20px 20px 40px;
+    margin-bottom: 20px;
+    list-style-type: none;
+    background-color: #f9f9f9;
+    border-left: 4px solid dodgerblue;
+    border-radius: 0 10px 10px 0;
+    max-width: 860px;
+}
+
+.suspension_table li{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #444;
+}
+
+.token_green{
+    color: green;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.token_yellow{
+    color: darkgoldenrod;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.token_red{
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+

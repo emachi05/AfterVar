@@ -209,19 +209,17 @@ p{
     background-color: #ffffff;
 }
 
-.register{
-    margin-top: 15%;
+.register {
+    margin-top: 35px; 
     background-color: bisque;
     width: 90%;
-    height: auto;
-    gap: 40px;
-    max-width: 1400px;
+    gap: 20px; 
+    max-width: 900px;
     display: flex;
     flex-direction: row;
     overflow: hidden;
     border: 1px solid black;
-    border-radius: 20%;
-    margin-top: 15px;
+    border-radius: 20px; 
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
@@ -234,18 +232,19 @@ p{
     justify-content: center;
 }
 
-#h1_register{
+#h1_register {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem; 
+    margin-bottom: 5px; 
     text-transform: uppercase;
     color: black;
 }
 
-#p_register{
+#p_register {
     text-align: center;
-    font-size: 1rem;;
-    color:#777;
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px; 
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 400;
@@ -263,44 +262,64 @@ p{
     align-items: center;
 }
 
-.register_field{
-    margin-bottom: 15px;
+.register_field {
+    margin-bottom: 8px; 
     text-align: left;
 }
 
-.register_field label{
+.register_field label {
     display: block;
-    margin-bottom: 5%;
+    margin-bottom: 2px; 
     font-weight: bold;
-    font-size: 0.9rem;
-    color:#000;
+    font-size: 0.8rem; 
+    color: #000;
 }
 
-.register_field input{
+.register_field input {
     width: 100%;
-    padding: 10px 15px;
-    border-radius: 8%;
+    padding: 8px 10px; 
+    border-radius: 5px;
     color: black;
     text-align: left;
     border: 1px solid black;
-    font-size: 1.0rem;
+    font-size: 0.9rem;
     box-sizing: border-box;
 }
 
-#btn_sumbit_r{
+#sqpref {
+    width: 100%;
+    padding: 8px 10px; 
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    border: 1px solid black;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#sqpref:focus{
+    border-color: blue;
+    outline: none;
+    background-color: aliceblue;
+    color: #000;
+}
+
+#btn_sumbit_r {
     width: 100%;
     min-width: 200px;
-    padding:5%;
-    margin-left: 20px;
+    padding: 10px;      
+    margin-left: 0;     
     background-color: black;
     color: white;
-    border-radius: 50%;
+    border-radius: 50px;
     font-weight: bold;
-    margin-bottom: 30px;
-    font-size: 1rem;
+    margin-bottom: 10px; 
+    font-size: 0.9rem;
     text-transform: uppercase;
     cursor: pointer;
-    margin-top:5%;
+    margin-top: 10px;    
 }
 
 #btn_sumbit_r:hover{

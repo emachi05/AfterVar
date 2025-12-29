@@ -104,6 +104,7 @@ def About_Us():
     return render_template('aboutus.html')
 
 if __name__ == '__main__':
-    db.create_all() #create db if not exist
-    app.run(host='0.0.0.0', port=5000) # host ->to open app to all devices with same network
+       with app.app_context(): #refer to app
+        db.create_all() #create db if not exist
 
+        app.run(host='0.0.0.0', port=5000, debug=True) # host -> to open app to all devices with same network

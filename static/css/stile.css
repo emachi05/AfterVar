@@ -1197,16 +1197,6 @@ transform: translateY(-10px);
     width: 100%;
 }
 
-.videos h1{
-    text-align: center;
-    font-size: 1.5rem;
-} 
-
-.videos p{
-    font-size: 0.9rem;
-    color: #666;
-}
-
 .About_us h1{
     font-size: 1.5rem;
     font-weight: 750;
@@ -1237,3 +1227,102 @@ transform: translateY(-10px);
     margin: 0
 }
 
+.ep_main{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ccc;
+}
+
+.ep_title{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.ep_title h1{
+    font-size: 1.5rem;
+    font-weight: 750;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.ep_title p{
+    text-align: center;
+    font-size: 1rem;;
+    color:#777;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.ep_wrapper{
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 60px;
+    border: 1px solid #666;
+}
+
+.ep_wrap_title{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.ep_wrap_title h2{
+    font-size: 1.3rem;
+    font-weight: 750;
+    color: #000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.video_container{
+    display:flex;
+    gap: 30px;
+    grid-template-columns: 30% 30% 30%;
+}
+
+.sec_video{
+    background-color: #666;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #4b5563;
+}
+
+.video{
+    position: relative;
+    width: 100%;
+    background-color: #666;
+}
+
+.video video{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video_info {
+    padding: 20px;
+    text-align: left;
+}
+
+.video_info h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: 700;
+}
+
+.video_info p {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin: 0;
+}

@@ -3,46 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <title>Episodi</title>
-   <link rel="stylesheet" href="{{ url_for('static', filename='css/stile.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stile.css') }}">
 </head>
 <body>
+
     {% include 'header.html' %}
 
-    <main>
-<div>
-    <h1>Primo caso: Inter-Napoli</h1>
-    <p>Il difensore dell'Inter (Denzel Dumfries) viene ostacolato dal centrocampista del Napoli(Frank Zambo Anguissa), l'arbitro
-        concede il calcio di rigore.Secondo voi l'intensità del contatto era tale da assegnare un rigore?
-    </p>
-    <video width="33%" height="33%" controls>
-        <source src="static/video_salvati/video1.mp4" type="video/mp4">
-        Il tuo browser non supporta il tag video.
-    </video>
-    </div>
-    <div>
-        <h1>Secondo caso: Cagliari-Lecce</h1>
-        <p>Il centrocampista del Cagliari (Gianluca Gaetano) commette un fallo sul giocatore del Lecce(Ylber
-            Ramadani) e viene espulso.Secondo voi l'intensità del contatto era tale da assegnare un cartellino
-            rosso?
-        </p>
-      <video width="33%" height="33%" controls>
-        <source src="static/video_salvati/video3.mp4" type="video/mp4">
-        Il tuo browser non supporta il tag video.
-    </video>
-    </div>
-     <div>
-        <h1>Terzo caso: Monza Juve</h1>
-        <p>L'attaccante del Monza(Patrick Ciurria) colpisce il centrocampista della Juventus
-            (Weston McKennie) e la palla gli rimbalza sulla parte alta del corpo. Non viene
-            assegnato il rigore dall'arbitro perchè considerato un contatto non punibile.
-            Secondo voi il contatto era punibile con un rigore?
-        </p>
-    <video width="33%" height="33%" controls >
-        <source src="static/video_salvati/video2.mp4" type="video/mp4">
-        Il tuo browser non supporta il tag video.
-    </video>
-    </div>
+    <main class="ep_main">
+        <div class="ep_title">
+            <h1>Tutte le decisioni di OpenVar</h1>
+            <p>Rivivile giornata per giornata!</p>
+        </div>
+
+        <section class="ep_wrapper">
+            <div class="ep_wrap_title">
+                <h2>Giornata 1</h2>
+            </div>
+
+            <div class="video_container">
+
+                <div class="sec_video">
+                    <div class="video">
+                        <video controls>
+                            <source src="{{ url_for('static', filename='video_salvati/video1.mp4') }}" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="video_info">
+                        <h3>Partita 1</h3>
+                        <p>Il giocatore commette fallo</p>
+
+                        <div class="interactive_sec">
+                            <div class="like_dislike_sec">
+                                <button class="btn_like_dislike" onclick="LikeOrNot(this, 'like')">
+                                    &#128077; </button>
+                                <button class="btn_like_dislike" onclick="LikeOrNot(this, 'like')">
+                                    &#128078; </button>
+                            </div>
+
+                            <div class="ref_decision">
+                                <span class="decision_lbl">La giuria arbitrale ha deciso correttamente?</span>
+                                <div class="decision_btn">
+                                    <button class="btn_right_wrong" onclick="RightOrNot(this, 'giusta')">Si!</button>
+                                    <button class="btn_right_wrong" onclick="RightOrNot(this, 'sbagliata')">No!</button>
+                                </div>
+                            </div>
+
+                            <div class="comment">
+                                <div class="comment_sec">
+                                    <input type="text" class="comment_box" placeholder="Scrivi il tuo parere..">
+                                    <button class="btn_comment" onclick="InviaCommento(this)">Invia</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sec_video">
+                    <div class="video">
+                        <video controls>
+                            <source src="{{ url_for('static', filename='video_salvati/video1.mp4') }}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video_info">
+                        <h3>Partita 2</h3>
+                        <p>Il giocatore commette fallo</p>
+                    </div>
+                </div>
+
+                <div class="sec_video">
+                    <div class="video">
+                        <video controls>
+                            <source src="{{ url_for('static', filename='video_salvati/video1.mp4') }}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video_info">
+                        <h3>Partita 3</h3>
+                        <p>Il giocatore commette fallo</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="ep_wrapper">
+            <div class="ep_wrap_title">
+                <h2>Giornata 2</h2>
+            </div>
+
+            <div class="video_container">
+
+                <div class="sec_video">
+                    <div class="video">
+                        <video controls>
+                            <source src="{{ url_for('static', filename='video_salvati/video1.mp4') }}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video_info">
+                        <h3>Partita 1</h3>
+                        <p>Il giocatore commette fallo g2 p1</p>
+                    </div>
+                </div>
+
+                <div class="sec_video">
+                    <div class="video">
+                        <video controls>
+                            <source src="{{ url_for('static', filename='video_salvati/video1.mp4') }}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video_info">
+                        <h3>Partita 2</h3>
+                        <p>Il giocatore commette fallo</p>
+                    </div>
+                </div>
+
+                <div class="sec_video">
+                    <div class="video">
+                        <video controls>
+                            <source src="{{ url_for('static', filename='video_salvati/video1.mp4') }}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video_info">
+                        <h3>Partita 3</h3>
+                        <p>Il giocatore commette fallo</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </main>
 
     {% include 'footer.html' %}

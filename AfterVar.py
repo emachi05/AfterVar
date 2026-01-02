@@ -43,6 +43,7 @@ class User(UserMixin, db.Model):
     def check_pwd(self, password):
         return check_password_hash(self.password_hash, password)
 
+
 #Create db Ref 
 class Arbitro(db.Model):
     __tablename__ = 'arbitri'
@@ -52,6 +53,41 @@ class Arbitro(db.Model):
     sezione = db.Column(db.String(50), nullable=False)
     anno_nascita = db.Column(db.Integer)
     img_url = db.Column(db.String(200), default='static/img/default_ref.png')
+
+
+#video db for less time in page redirect 
+class Video(db.Model):
+    __tablename__ = 'videos'
+
+    id = db.Colummn(db.Integer, primary_key=True)
+    giornata = db.Column(db.Integer, nullable=False)
+    titolo  = db.Column(db.String(100), nullable=False) #squad
+    descrizione = db.Column(db.String(255)) 
+    percorso = db.Column(db.String(100)) #filename video
+    esito_ufficiale = db.Column(db.Boolean, default=True) #user score
+
+#relation user and video
+class Interazione(db.Model):
+    __tablename__ = 'interazioni'
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    video_id = db.Column(db.Integer, db.ForeignKey('videos.id'), nullable=False)
+    like = db.Column(db.Boolean, default=False)
+    dislike = db.Column(db.Boolean, default=False)
+    #to save vote of user and save if it is right or not
+    giudizio_votazione = db.Column(db.Boolean, nullable=True)
+
+#to save user comment
+class Commento(db.Model):
+    __tablename__ = 'commenti'
+
+    id = db.Column(db.Integer)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    video_id = db.Column(db.Integer, db.ForeignKey('videos.id'), nullable=False)
+    testo = db.Column(db.String(500), nullable=False)
+    data = db.Column(db.DateTime, default=datetime.now)
+    stampa_user = db.Column(db.String(50), db.ForeignKey('users.username'), nullable=False)
 
 #function to populate the referees table if they don't exist
 def popola_arbitri():
@@ -157,7 +193,7 @@ def Registrazione():
         password = request.form.get('pwd')
         squadra = request.form.get('sqpref')
 
-        #check if it already exists
+        #check if it already exists with mail and username
         user_exists = User.query.filter((User.email == email) | (User.username == username)).first()
         
         if user_exists:

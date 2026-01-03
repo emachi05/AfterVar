@@ -8,7 +8,7 @@
 </head>
 <body>
     {% include 'header.html' %}
-
+     {% if current_user.is_authenticated %}
     <main>
         <div class="classif_container">
             <h1> Classifica</h1>
@@ -55,8 +55,16 @@
                 {% endif %}
         </section>
      </div>
-    </div>        
- </main>
+    </div>      
+    {% else  %}
+    <div class="not_auth">
+     <h3>Effettua il </h3>
+     <button class="btn_not_auth">
+     <a href="{{url_for ('Login')}}">login</a>
+     </button>
+    </div>
+{% endif %}  
+</main>
 
 
     {% include 'footer.html' %}

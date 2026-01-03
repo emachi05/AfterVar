@@ -9,6 +9,7 @@
 
     {% include 'header.html' %}
 
+     {% if current_user.is_authenticated %}
     <!--section js, like_dislike, comment for no repeat-->
     {% macro interaction(id_video) %}
     <div class="interactive_sec" data-id="{{ id_video }}">
@@ -657,6 +658,14 @@
                 </div>
             </div>
         </section>
+        {% else  %}
+<div class="not_auth">
+    <h3>Effettua il </h3>
+     <button class="btn_not_auth">
+    <a href="{{url_for ('Login')}}">login</a>
+     </button>
+</div>
+{% endif %}
     </main>
 
     {% include 'footer.html' %}

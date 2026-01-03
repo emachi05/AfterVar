@@ -2880,3 +2880,33 @@ main{
 .all_comment a{
     color: black;
 }
+
+.not_auth{
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: 50px auto;
+    border: 1px solid black;
+}
+
+.not_auth h3{
+    color:black;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.btn_not_auth{
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn_not_auth a{
+    text-transform: uppercase;
+    color: black;
+    display: inline-block;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+}

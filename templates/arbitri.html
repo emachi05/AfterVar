@@ -7,7 +7,7 @@
 </head>
 <body>
     {% include 'header.html' %}
-
+    {% if current_user.is_authenticated %}
     <main class="arbitri_container">
         <h1 class="h_container">Arbitri Serie A</h1>
         <p class="p_container">Elenco ufficiale degli arbitri per la stagione 25/26.</p>
@@ -35,6 +35,14 @@
         {% else %}
             <p>Nessun arbitro presente nel database.</p>
         {% endif %}
+        {% else %}
+        <div class="not_auth">
+    <h3>Effettua il </h3>
+     <button class="btn_not_auth">
+    <a href="{{url_for ('Login')}}">login</a>
+     </button>
+</div>
+{% endif %}
     </main>
 
     {% include 'footer.html' %}

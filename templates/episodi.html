@@ -31,7 +31,9 @@
             <div class="comment_sec">
                 <input type="text" class="comment_box" placeholder="Scrivi il tuo parere..">
                 <button class="btn_comment" onclick="InviaCommento(this)">Invia</button>
-                <a href="{{ url_for('VisualizzaCommenti', video_id=id_video) }} ">Leggi Tutti i Commenti</a>
+                <button class="all_comment">
+                    <a href="{{ url_for('VisualizzaCommenti', video_id=id_video) }} ">Leggi Tutti i Commenti</a>
+                </button>
             </div>
         </div>
     </div>

@@ -61,7 +61,6 @@ class Arbitro(db.Model):
     cognome = db.Column(db.String(50), nullable=False)
     sezione = db.Column(db.String(50), nullable=False)
     anno_nascita = db.Column(db.Integer)
-    img_url = db.Column(db.String(200), default='static/img/default_ref.png')
 
 #relation user and video
 class Interazione(db.Model):

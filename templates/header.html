@@ -30,9 +30,8 @@
                         <p id="username">{{current_user.username}}</p>
                     </div>
                     <ul id="link_dropdown">
-                        <li><a href=''></a>Profilo</li>
-                        <li><a href=''></a>Storico</li>
-                        <li><a href="{{url_for ('Logout')}}"></a></li>
+                        <li><a href='profilo.html'>Profilo</a></li>
+                        <li><a href="{{url_for ('Logout')}}">Logout</a></li>
                     </ul>
                 </div>
             {% else %}

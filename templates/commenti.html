@@ -3,10 +3,9 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Commenti</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stile.css') }}">
 </head>
 <body>
      {% include 'header.html' %}
@@ -15,12 +14,13 @@
 
         <div class="comment_head">
             <h1>Commenti: {{ titolo }}</h1>
-            <a href="{{ url_for('Episodi') }}" class="btn_back">Episodi</a>
+            <a href="{{ url_for('Episodi') }}" class="btn_back">Clicca qui per tornare alla sezione episodi</a>
         </div>
 
         <div class="comment_list">
             {% if commenti %}
                 {% for c in commenti %}
+                <div class="general_comment_sec">
                 <div class="comment_header_sec">
                     <span class="comment_user">{{c.stampa_user}}</span>
                 </div> 

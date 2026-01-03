@@ -1,6 +1,5 @@
-
 p{
-    color: skyblue;
+    color: black;
     text-align: left;
 }
 
@@ -176,6 +175,11 @@ p{
     padding: 0;
     margin: 0;
     text-align: center;
+}
+
+#link_dropdown a{
+    color:white;
+    text-decoration: none;
 }
 
 #link_dropdown{
@@ -1177,7 +1181,10 @@ p{
     color: aliceblue;
     display: flex;
     flex-direction: column;
-    justify-content: right;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-right: 20px;
 }
 
 .body_login{
@@ -2824,4 +2831,52 @@ main{
 .btn_red{
     border: 5px solid red;
     color: red;
+}
+
+.comment_cnt{
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.comment_head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #7f8c8d;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.btn_back{
+    margin-left: 20px;
+    color: black;
+    padding: 15px 15px;
+}
+
+.comment_header_sec{
+    background-color: #e0e0e0;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+.comment_body {
+    padding: 5px;
+}
+
+.comment_body p{
+    padding: 10px;
+    color:black;
+}
+
+.no_comment{
+    text-align: center;
+    color:#777;
+    margin-top: 30px;
+}
+
+.all_comment a{
+    color: black;
 }

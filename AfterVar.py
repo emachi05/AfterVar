@@ -29,6 +29,49 @@ def contiene_parolacce(testo):
             return True
     return False
 
+# number id_video, surname ref and boolean for big mistake (true=big mistake)
+VIDEO = {
+    1: ("Marinelli", False),
+    2: ("Marcenaro", False),
+    3: ("Tremolada", True),
+    4: ("Collu", False),
+    5: ("Rapuano", True),
+    6: ("Crezzini", False),
+    7: ("Di Bello", False),
+    8: ("Manganiello", False), 
+    9: ("Perenzoni", False), 
+    10: ("Guida", False),
+    11: ("Piccinini", False),
+    12: ("Fourneau", False),
+    13: ("Marinelli", True),
+    14: ("Guida", False),
+    15: ("Marcenaro", False),
+    16: ("Mariani", False),
+    17: ("Colombo", False),
+    18: ("La Penna", False),
+    19: ("Sozza", True),
+    20: ("Crezzini", False),
+    21: ("Doveri", True),
+    22: ("Chiffi", True),
+    23: ("Abisso", False),
+    24: ("Di Bello", True), 
+    25: ("Doveri", True),
+    26: ("Sozza", False),
+    27: ("Bonacina",False),
+    28: ("Collu", True), 
+    29: ("Piccinini", True),
+    30: ("Massa", False),
+    31: ("Zufferli", False),
+    32: ("Mucera", False),
+    33: ("Mariani", False),
+    34: ("Crezzini", True),
+    35: ("Marchetti", False),
+    36: ("Sozza", False),
+    37: ("Fourneau", False),
+    38: ("Pairetto", True),
+    39: ("Calzavara", False)
+}
+
 #user table, usermixin -> function for info of user session, db.model -> to create table
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
@@ -43,6 +86,10 @@ class User(UserMixin, db.Model):
     punteggio = db.Column(db.Integer, default=0)
     squad_prefer = db.Column(db.String(50), nullable=False)
     data_iscr = db.Column(db.DateTime, default=datetime.now)
+
+    #vote weight 
+    def get_w_voto(self):
+        return 1.0+(self.punteggio/100.0)
 
     #to save encrypt password
     def set_pwd(self, password):
@@ -61,6 +108,11 @@ class Arbitro(db.Model):
     cognome = db.Column(db.String(50), nullable=False)
     sezione = db.Column(db.String(50), nullable=False)
     anno_nascita = db.Column(db.Integer)
+    c_gialli = db.Column(db.Integer, default=0)
+    c_rossi = db.Column(db.Integer, default=0)
+    rossi_consec = db.Column(db.Integer, default=0)
+    turni_sosp = db.Column(db.Integer, default=0)
+    stato = db.Column(db.String(50), default="Attivo")
 
 #relation user and video
 class Interazione(db.Model):
@@ -73,6 +125,7 @@ class Interazione(db.Model):
     dislike = db.Column(db.Boolean, default=False)
     #to save vote of user and save if it is right or not
     giudizio_votazione = db.Column(db.Boolean, nullable=True)
+    w_voto = db.Column(db.Float, default=1.0)
 
 #to save user comment
 class Commento(db.Model):
@@ -84,6 +137,65 @@ class Commento(db.Model):
     testo = db.Column(db.String(500), nullable=False)
     data = db.Column(db.DateTime, default=datetime.now)
     stampa_user = db.Column(db.String(50), nullable=False)
+
+#ref vote
+def calcola_sanz_arbitro(cognome_arbitro):
+    arbitro = Arbitro.query.filter_by(cognome=cognome_arbitro).first()
+
+    gialli = 0
+    rossi = 0
+
+    for v_id, dati in VIDEO.items():
+        if dati[0] == cognome_arbitro:
+            grave = dati[1]
+            voti = Interazione.query.filter_by(video_id=v_id).all()
+
+            errore = 0.0
+            giusto = 0.0
+
+            for v in voti:
+                if v.giudizio_votazione is True:
+                    errore += v.peso_voto
+                elif v.giudizio_votazione is False:
+                    giusto += v.peso_voto
+
+            if errore>giusto:
+                if grave:
+                    rossi+=1
+                else:
+                    gialli+=1
+
+    #2 ylwcard -> 1 redcard
+    rossi_somma_gialli = gialli // 2 
+    gialli_rimasti = gialli % 2
+
+    tot_rossi = rossi + rossi_somma_gialli
+
+    storico_rossi = arbitro.c_rossi
+    arbitro.c_gialli = gialli_rimasti
+    arbitro.c_rossi = tot_rossi
+
+    if tot_rossi>storico_rossi:
+        nuovi_rossi = tot_rossi-storico_rossi
+
+        for i in range(nuovi_rossi):
+            arbitro.rossi_consecutivi += 1
+
+            if arbitro.rossi_consecutivi == 1:
+                arbitro.turni_sosp += 1
+            elif arbitro.rossi_consecutivi == 2:
+                arbitro.turni_sosp += 3
+            elif arbitro.rossi_consecutivi >= 3:
+                arbitro.turni_sosp += 5
+
+    if arbitro.turni_sosp == 0:
+        arbitro.stato = "Attivo"
+    elif arbitro.gialli == 1:
+        arbitro.stato = "Diffidato"
+    elif arbitro.turni_sosp > 0:
+        arbitro.stato = "Sospeso"
+
+    db.session.commit()
 
 #function to populate in default ref and video
 def popola_arbitri():
@@ -284,11 +396,17 @@ def api_vota_decisione():
         interazione = Interazione(user_id=current_user.id, video_id=video_id)
         db.session.add(interazione)
 
-    if interazione.giudizio_votazione is None:
-        current_user.punteggio += 10 
-    
+    if interazione.giudizio_votazione is not None:
+        return jsonify({'success': False, 'msg': "Hai gia votato!"})
+        
     interazione.giudizio_votazione = voto_bool
+    interazione.w_voto = current_user.get_w_voto()
+    current_user.punteggio += 10 
     db.session.commit()
+
+    dati_video = VIDEO.get(video_id)
+    if dati_video:
+        calcola_sanz_arbitro(dati_video[0])
     
     return jsonify({'success': True, 'nuovo_punteggio': current_user.punteggio})
 

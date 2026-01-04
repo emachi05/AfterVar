@@ -1307,31 +1307,17 @@ sec_news{
     border: 1px solid #eee;
 }
 
-.status_badge_green,
-.status_badge_yellow,
-.status_badge_red{
+.status_badge{
     display: inline-block;
     padding: 8px 18px;
     border-radius: 25px;
     font-weight: bold;
     font-size: 1.0rem;
     text-transform: uppercase;
-    color: white;
+    color: black;
     margin: 10px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.status_badge_green{
-    background-color: green;
-}
-
-.status_badge_yellow{
-    background-color: yellow;
-    color: #333;
-}
-
-.status_badge_red{
-    background-color: red;
+    border: 2px solid black;
 }
 
 .info_sta{

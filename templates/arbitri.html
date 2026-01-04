@@ -24,14 +24,14 @@
                     
                         <div class="status_container">
                             {% if arbitro.stato=='Sospeso' %}
-                            <span class="status_badge_red"> Sospeso
+                            <span class="status_badge"> Sospeso
                                 ({{ arbitro.turni_sosp }} turni) </span>
 
                             {% elif arbitro.stato=='Diffidato' %}    
-                            <span class="status_badge_yellow"> Diffidato</span>
+                            <span class="status_badge"> Diffidato</span>
 
                             {% else %}    
-                            <span class="status_badge_green"> Attivo</span>
+                            <span class="status_badge"> Attivo</span>
                             {% endif %}
                             </div>
 

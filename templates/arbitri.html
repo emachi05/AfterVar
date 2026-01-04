@@ -7,8 +7,8 @@
 </head>
 <body>
     {% include 'header.html' %}
-    {% if current_user.is_authenticated %}
     <main class="arbitri_container">
+          {% if current_user.is_authenticated %}
         <h1 class="h_container">Arbitri Serie A</h1>
         <p class="p_container">Elenco ufficiale degli arbitri per la stagione 25/26.</p>
         
@@ -21,9 +21,24 @@
                     <div class="card_body">
                         <h3 class="arbitro_nome">{{ arbitro.cognome }}</h3>
                         <p>{{ arbitro.nome }}</p>
-                        <p>{{ arbitro.stato }}</p>
+                    
+                        <div class="status_container">
+                            {% if arbitro.stato=='Sospeso' %}
+                            <span class="status_badge_red"> Sospeso
+                                ({{ arbitro.turni_sosp }} turni) </span>
+
+                            {% elif arbitro.stato=='Diffidato' %}    
+                            <span class="status_badge_yellow"> Diffidato</span>
+
+                            {% else %}    
+                            <span class="status_badge_green"> Attivo</span>
+                            {% endif %}
+                            </div>
+
+                            <div class="info_sta">
                         <p>Numero cartellini gialli: {{ arbitro.c_gialli }}</p>
                         <p>Numero cartellini rossi: {{ arbitro.c_rossi }}</p>
+                            </div>
                             <hr class="card_divider">
                         <p class="arbitro_info">
                             <span class="badge_sezione">Sez.{{ arbitro.sezione }}</span>

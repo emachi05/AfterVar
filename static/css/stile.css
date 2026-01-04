@@ -1307,6 +1307,47 @@ sec_news{
     border: 1px solid #eee;
 }
 
+.status_badge_green,
+.status_badge_yellow,
+.status_badge_red{
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.0rem;
+    text-transform: uppercase;
+    color: white;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.status_badge_green{
+    background-color: green;
+}
+
+.status_badge_yellow{
+    background-color: yellow;
+    color: #333;
+}
+
+.status_badge_red{
+    background-color: red;
+}
+
+.info_sta{
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.info_sta p{
+    margin: 5px 0;
+    font-size: 1.0rem;
+    color: #555;
+}
+
 .h_container{
     font-size: 2.5rem;
     text-align: center;

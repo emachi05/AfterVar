@@ -204,23 +204,37 @@ def popola_arbitri():
 
     dati_iniziali = [
         ("Rosario", "Abisso", "Palermo", 1985),
+        ("Claudio", "Allegretta", "Molfetta", 1990),
         ("Giovanni", "Ayroldi", "Molfetta", 1991),
+        ("Kevin", "Bonacina", "Bergamo", 1993),
+        ("Andrea", "Calzavara", "Varese", 1993),
         ("Daniele", "Chiffi", "Padova", 1984),
+        ("Giuseppe", "Collu", "Cagliari", 1990),
         ("Andrea", "Colombo", "Como", 1990),
+        ("Valerio", "Crezzini", "Siena", 1993),
         ("Marco", "Di Bello", "Brindisi", 1981),
         ("Daniele", "Doveri", "Roma 1", 1977),
         ("Maria Sole", "Ferrieri Caputi", "Livorno", 1990),
+        ("Francesco", "Fourneau", "Roma", 1984),
         ("Marco", "Guida", "Torre Annunziata", 1981),
+        ("Federico", "La Penna", "Roma 1", 1983),
+        ("Gianluca", "Manganiello", "Pinerolo", 1981),
+        ("Matteo", "Marcenaro", "Genova", 1992),
+        ("Matteo", "Marchetti", "Ostia Lido", 1989),
         ("Fabio", "Maresca", "Napoli", 1981),
         ("Maurizio", "Mariani", "Aprilia", 1982),
+        ("Livio", "Marinelli", "Tivoli", 1984),
         ("Davide", "Massa", "Imperia", 1981),
-        ("Luca", "Pairetto", "Nichelino", 1984),
-        ("Simone", "Sozza", "Seregno", 1987),
-        ("Claudio", "Allegretta", "Molfetta", 1990),
-        ("Andrea", "Calzavara", "Varese", 1993),
         ("Giuseppe", "Mucera", "Palermo", 1990),
+        ("Luca", "Pairetto", "Nichelino", 1984),
+        ("Daniele", "Perenzoni", "Rovereto", 1988),
+        ("Marco", "Piccinini", "Forlì", 1983),
+        ("Antonio", "Rapuano", "Rimini", 1985),
+        ("Simone", "Sozza", "Seregno", 1987),
+        ("Paride", "Tremolada", "Monza", 1988),
         ("Niccolò", "Turrini", "Firenze", 1993),
-        ("Andrea", "Zanotti", "Rimini", 1993)
+        ("Andrea", "Zanotti", "Rimini", 1993),
+        ("Luca", "Zufferli", "Udine", 1990)
     ]
     
     #add row

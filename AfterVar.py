@@ -335,6 +335,10 @@ def termini_e_condizioni():
 def About_Us():
     return render_template('aboutus.html')
 
+@app.route('/profilo')
+def Profilo():
+    return render_template('profilo.html')
+
 if __name__ == '__main__':
     with app.app_context(): #refer to app
         db.create_all() #create db if not exist

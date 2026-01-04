@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Profilo</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/stile.css') }}">
+
+</head>
+<body>
+    {% include 'header.html' %}
+
+  <main>
+    <div class="profile_container">
+        <div class="profile_title">
+            <h1> Profilo Personale </h1>
+            <p> Qui puoi gestire tutte le tue informazioni </p>
+        </div>
+            <div class="profile_wrap">
+
+                <div class="profile_left">
+                    <div class="profile_card">
+                        <h2>{{ current_user.username }} </h2>
+                            <p class="profile_users"> Utente di AfterVar </p>
+                            
+                            <div class="profile_row">
+                                <div class="profile_item">
+                                    <span class="user_num">{{ current_user.punteggio }}</span>
+                                    <span class="num_lab">Punti</span>
+                                </div>
+                         </div>
+                </div>
+            </div>
+          
+            <div class="profile_right">
+                <div class="info_section">
+                    <h3> Informazioni Personali </h3>
+                    <div class="info_grid">
+                        <div class="info_box">
+                            <span class="info_label">Nome</span>
+                            <p>{{ current_user.nome }} {{ current_user.cognome }}</p>
+                        </div>
+                          <div class="info_box">
+                            <span class="info_label">Email</span>
+                            <p>{{ current_user.email}}</p>
+                        </div>
+                          <div class="info_box">
+                            <span class="info_label">Squadra del Cuore</span>
+                            <p class="team_text">{{ current_user.squad_prefer }}</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="action_section">
+             <button class="btn_action"><a href="{{ url_for('Logout') }}">Logout</a></button> 
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+
+    {% include 'footer.html' %}
+</body>
+</html>

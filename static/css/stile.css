@@ -1860,7 +1860,11 @@ main{
 
 @media (max-width: 900px){
     html,body{
+        width: 100%;
         max-width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
     }
 
     h1{
@@ -1872,14 +1876,18 @@ main{
     }
 
     #back_header{
-        height: auto;
-        flex-direction: column ;
-        padding: 20px;
+        height: 70%;
+        width: 100%;
+        flex-direction: row;
+        padding: 0 20px;
+        justify-content: space-between;
         gap: 20px;
+        position: relative;
+        align-items: center;
     }
 
     #logo_img{
-        height: 60px;
+        height: 50px;
     }
 
     #menu_container ul{
@@ -1957,6 +1965,17 @@ main{
         min-width: 600px;
     }
 
+    .classif_container{
+        width: 100%;
+        padding: 10px;
+    }
+
+    .classif_sec{
+        padding: 15px;
+        border-radius: 10px;
+        overflow-x: auto;
+    }
+
     .card_news{
         flex-direction: column;
     }
@@ -1975,10 +1994,13 @@ main{
     }
 
     #back_footer{
+        width: 100%;
+        margin: 0;
         flex-direction: column;
+        align-items: center;
         text-align: center;
-        gap: 30px;
-        padding: 30px 15px;
+        gap: 40px;
+        padding: 4px 20px;
     }
 
     #logo_image_footer{

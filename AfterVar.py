@@ -159,9 +159,7 @@ def calcola_sanz_arbitro(cognome_arbitro):
                 elif v.giudizio_votazione is True:
                     giusto += v.w_voto
 
-            print(f"Video {v_id}: Errore={errore} vs Giusto={giusto} -> Grave? {grave}")
             if errore>giusto:
-                print(f"  -> ASSEGNATO CARTELLINO (Grave: {grave})") # DEBUG
                 if grave:
                     rossi+=1
                 else:
@@ -196,7 +194,6 @@ def calcola_sanz_arbitro(cognome_arbitro):
         arbitro.stato = "Diffidato"
     else:
         arbitro.stato = "Attivo"
-    print(f"RISULTATO: Gialli={arbitro.c_gialli}, Rossi={arbitro.c_rossi}, Stato={arbitro.stato}")
     db.session.commit()
 
 #function to populate in default ref and video
